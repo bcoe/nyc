@@ -366,6 +366,20 @@ If you opt to pre-instrument your source-code (rather than using a just-in-time 
 _Important: If you are using nyc with a project that pre-instruments its code, run nyc with the configuration option `--exclude-after-remap` set to `false`.
 Otherwise nyc's reports will exclude any files that source-maps remap to folders covered under exclude rules._
 
+### Changing files tree structure in report
+
+Instanbul is able to show report files in different ways. Option `--summarizer` defines 4 ways to do so:
+`flat` - all files are reported as one flat list with full path
+`nested` - all files are reported as one nested tree list, which shows folders and files
+`pkg` - files are reported in collapsed list similar to file explorers showing only current folder's children
+`defaultSummarizer` - default summarizer defined in `istanbul-lib-report` package. So far it is `pkg`
+
+```json
+{
+  "summarizer": "flat"
+}
+```
+
 ## [Integrating with coveralls](./docs/setup-coveralls.md)
 
 ## [Integrating with codecov](./docs/setup-codecov.md)

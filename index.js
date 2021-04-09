@@ -448,6 +448,7 @@ class NYC {
     const reports = require('istanbul-reports')
 
     const context = libReport.createContext({
+      defaultSummarizer: this.config.summarizer,
       dir: this.reportDirectory(),
       watermarks: this.config.watermarks,
       coverageMap: await this.getCoverageMapFromAllCoverageFiles()
